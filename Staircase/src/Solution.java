@@ -10,14 +10,19 @@ public class Solution {
 
     // Complete the staircase function below.
     static void staircase(int n) {
-        String blank, symbol, line;
+        // String version = System.getProperty("java.version");
+        // System.out.println("JAVA Version : " + version);
+        // ==> HackerRank Java Version : 1.8
         int depth = 0;
         do {
             ++depth;
-            blank = "\s".repeat(n-depth);
-            symbol = "#".repeat(depth);
-            line = blank.concat(symbol);
-
+            String line = "";
+            for (int i = 0; i < n-depth; i++) {
+                line += " ";
+            }
+            for (int i = 0; i < depth; i++) {
+                line += "#";
+            }
             System.out.println(line);
         } while (n > depth);
     }
