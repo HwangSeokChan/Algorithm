@@ -1,6 +1,6 @@
 class Solution {
     public boolean solution(String s) {
-        return s.matches("\\d{4}{6}") ? true : false;
+        return s.matches("^\\d{4}|{6}$") ? true : false;
     }
 }
 
