@@ -20,19 +20,17 @@ public class SolutionTest {
     }
 
     @Test
-    public void name() {
+    public void test2() {
 
         HashMap<Integer, int[][]> testCase = new HashMap<Integer, int[][]>();
 
-        testCase.put(11, new int[][] {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}});
-        // testCase.put(-1, new int[][] {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,0},{0,0,0,0,1}});
+        // testCase.put(11, new int[][] {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}});
+        testCase.put(-1, new int[][] {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,0},{0,0,0,0,1}});
 
         for (Map.Entry<Integer, int[][]> entry : testCase.entrySet()) {
             entry.getKey();
-            int a = test.solution(entry.getValue());
+            int a = test.bfs(entry.getValue());
             assertEquals(entry.getKey(), a);
         }
-
-
     }
 }
