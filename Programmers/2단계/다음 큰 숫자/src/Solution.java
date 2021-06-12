@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 class Solution {
-    public int solution(int n) {
+    public int solutionA(int n) {
         char[] binary = Integer.toBinaryString(n).toCharArray();
 
         return Integer.parseInt(String.valueOf(increase(binary)), 2);
@@ -47,5 +47,26 @@ class Solution {
         }
 
         return newBinary;
+    }
+
+    public int solution(int n) {
+        int mask = n & -n;
+        int increase = ((n ^ (n + mask)) / mask) >> 2;
+        return n + mask + increase;
+    }
+
+    public int solutionC(int n) {
+
+        int count = Integer.bitCount(n);
+        while(true) {
+            if(count == Integer.bitCount(++n)) break;
+        }
+
+        return n;
+    }
+
+    // 비트형태를 출력
+    private String bit_format(int n) {
+        return String.format("%08d", Integer.parseInt(Integer.toBinaryString(n)));
     }
 }
